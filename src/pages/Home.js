@@ -1,13 +1,20 @@
 // src/pages/Home.js
 import React from 'react';
-import { Box, Heading, Text, Grid, GridItem, Image, Divider, Link} from '@chakra-ui/react';
+import { Box, Heading, Flex, Text, Grid, GridItem, Image, Divider, Link} from '@chakra-ui/react';
 import profilePic from '../images/fourthJuly.jpg'
+import cafePic from '../images/cafe.png'
+import { FaPagelines} from 'react-icons/fa';
+import { GiLotus } from 'react-icons/gi';
+import { BsFlower1 } from 'react-icons/bs';
+
+
+
 function Home() {
   return (
     <Box p = {3} height = "90vh">
       <Grid
         templateColumns={{ base: 'repeat(5, 1fr)', md: 'repeat(6, 1fr)' }}
-        templateRows={{ base: 'repeat(10, auto)', md: 'repeat(6, 1fr)' }}
+        templateRows={{ base: 'auto', md: 'repeat(6, 1fr)' }}
         gap = {4}
         height="100%"  // stretches to fill the full screen
         alignItems="stretch" // 👈 ensures children stretch vertically
@@ -17,16 +24,36 @@ function Home() {
         <GridItem 
           colSpan={{ base: 3, md: 3 }}
           rowSpan={{ base: 2, md: 3 }}
-          bg = "#FADCD9" 
+          bg="#FADCD9" 
           p={6} 
           borderRadius="xl"
-          height = "100%"
-          justifyContent="center"
-          flexDirection="column"
+          height="100%"
+          position="relative" // key for absolute positioning
+          cursor="default" // optional, makes it feel interactive without being clickable
+          transition="transform 0.3s ease, box-shadow 0.3s ease"
+          _hover={{
+            transform: 'scale(1.03)',
+            boxShadow: 'lg',
+          }}
         >
-            <Heading size = "lg" noOfLines={2} whiteSpace="normal" >Engineer by Day, Artist Always —</Heading>
-            <Text fontSize = "xl" mt= {2}>  Blending Logic and Imagination to Build What Matters</Text>
+          {/* Flower icon in top-right */}
+          <Flex direction="column" justify="space-between" height="100%">
+            <Box position="absolute" top={4} right={4} p = {{md: "6"}} fontSize= {{base: "5xl", md: "8xl"}}>
+              <BsFlower1 color="#F8AFA6" />
+            </Box>
+
+          {/* Text content in bottom-left */}
+            <Box mt="auto">
+              <Heading size="lg" noOfLines={2} whiteSpace="normal">
+                Engineer by Day, Artist Always —
+              </Heading>
+              <Text fontSize="xl" mt={2}>
+                Blending Logic and Imagination to Build What Matters
+              </Text>
+            </Box>
+          </Flex>
         </GridItem>
+
 
        <GridItem
           colSpan={{ base: 2, md: 1 }}
@@ -56,8 +83,10 @@ function Home() {
         >
           <Text fontWeight = "bold">Learn More</Text>
           <Image
-            src = {profilePic}
+            src = {cafePic}
             alt = "portrait"
+            objectFit= "cover"
+            width = "100%"
             height="50%"
             mt = {2}
             borderRadius= "lg"
@@ -76,24 +105,36 @@ function Home() {
         </GridItem >
 
         <GridItem colSpan={{ base: 5, md: 2 }} rowSpan={{ base: 1, md: 3 }}  bg = "#FADCD9" p= {4} borderRadius = "xl">
-          <Text>Sim is ...</Text>
+          <Text fontSize = "xl">I'm a developer who values both logic and creativity — I build secure, user-friendly apps and draw inspiration from my love of art and travel.</Text>
         </GridItem>
 
         <GridItem 
           colSpan={{ base: 5, md: 2 }}
           rowSpan={{ base: 1, md: 3 }} 
-          bg = "#F8AFA6"
-          display = "flex"
-          p = {6}
-          borderRadius = "xl"
-          flexDirection = "column"
-          justifyContent = "space-between"
+          bg="#F8AFA6"
+          display="flex"
+          p={6}
+          position="relative"
+          borderRadius="xl"
+          flexDirection="column"
+          justifyContent={{ base: 'flex-start', md: 'flex-end' }}
         >
-          <Text fontSize = "sm" mb = {2}>Have some questions?</Text>
-          <Heading size = "md">Contact Me</Heading>
-          <Link mt = "auto" alignSelf = "flex-end" href = "/contact">---</Link>
+          {/* This will no longer be absolutely positioned */}
+          <Text fontSize="md" mb={2}>
+            Have some questions?
+          </Text>
 
+          {/* Keep this arrow absolutely positioned if you want it in the corner */}
+          <Box position="absolute" top={3} right={4} fontSize="3xl">
+            ↗
+          </Box>
+
+          {/* Main heading */}
+          <Heading size="lg" textAlign="left">
+            Contact Me
+          </Heading>
         </GridItem>
+
 
         <GridItem 
             

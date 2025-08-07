@@ -1,4 +1,4 @@
-import { Box, Tag } from "@chakra-ui/react";
+import { Box, Tag, Text, Image, Wrap, WrapItem} from "@chakra-ui/react";
 import Slider from 'react-slick';
 
 function Card({name, images, description, technologies}){
@@ -12,33 +12,35 @@ function Card({name, images, description, technologies}){
     
     return (
         <div>
-            <Box>
-                <Text fontSize = "lg">{name}</Text>
+            <Box boxShadow="md" borderRadius = "lg" mb = {8} p = {3} bg = "#EFEAE7">
+                <Text fontSize = "lg" fontWeight = "bold">{name}</Text>
                 {images.length > 1 ? (
-                    <Slider {...settings}>
+                    <Box my = {3}>
+                        <Slider {...settings}>
 
-                        {images.map((src,idx) => (
-                            <Image
-                                key = {idx}
-                                src = {src}
-                                height = "200px"
-                                objectFit = "cover"
-                                borderRadius = "md"
-                                width = "100%"
-                            />
-                        ))}
-                    </Slider>
+                            {images.map((src,idx) => (
+                                <Image
+                                    key = {idx}
+                                    src = {src}
+                                    height = "500px"
+                                    objectFit = "contain"
+                                    borderRadius = "md"
+                                    width = "100%"
+                                />
+                            ))}
+                        </Slider>
+                        </Box>
                 ):(
                     <Image
                         src = {images[0]}
-                        height = "200px"
-                        objectFit = "cover"
+                        height = "500px"
+                        objectFit = "contain"
                         width = "100%"
                         borderRadius = "md"
                     ></Image>
                 )}
 
-                <Text fontSize = "md" my = {3}> {description}</Text>
+                <Text fontSize = "md" my = {10}> {description}</Text>
 
                 <Wrap>
                     {technologies.map((tech, idx) => (
