@@ -1,6 +1,7 @@
 // src/pages/Home.js
 import React from 'react';
 import { Box, Heading, Flex, Text, Grid, GridItem, Image, Divider, Link} from '@chakra-ui/react';
+import { Link as RouterLink } from "react-router-dom";
 import profilePic from '../images/fourthJuly.jpg'
 import cafePic from '../images/cafe.png'
 import { FaPagelines} from 'react-icons/fa';
@@ -94,11 +95,17 @@ function Home() {
   
           <Box mt = {4}>
               <Divider borderColor = "#F8AFA6" orientation='horizontal' my={4}></Divider>
-              <Text>Projects</Text>
+                <Link as={RouterLink} to="/projects">
+                  <Text>Projects</Text>
+                </Link>
               <Divider borderColor = "#F8AFA6" orientation='horizontal' my={4}></Divider>
-              <Text>Travel Diary</Text>
+                <Link as={RouterLink} to="/travel">
+                    <Text>Travel Diary</Text>
+                </Link>
               <Divider borderColor = "#F8AFA6" orientation='horizontal' my={4}></Divider>
-              <Text>Art Portfolio</Text>
+                <Link as={RouterLink} to="/art">
+                  <Text>Art Portfolio</Text>
+                </Link>
           </Box>
 
 
@@ -149,9 +156,9 @@ function Home() {
             justifyContent = "space-between"
             alignItems="center"
           >
-            <Text>INSTAGRAM</Text>
-            <Text>TWITTER</Text>
-            <Text>LINKEDIN</Text>
+            <Link href = "https://github.com/sim21kaur"><Text>GITHUB</Text></Link>
+            <Text>EMAIL</Text>
+            <Link href = "https://www.linkedin.com/in/simkaurs/"><Text>LINKEDIN</Text></Link>
                     
         </GridItem>
 

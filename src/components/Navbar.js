@@ -48,10 +48,8 @@ function Navbar() {
             
           > More </MenuButton>
           <MenuList>
-            <MenuItem as={RouterLink} to="/about">About Me</MenuItem>
             <MenuItem as={RouterLink} to="/travel">Travel Diaries</MenuItem>
             <MenuItem as={RouterLink} to="/art">Art Portfolio</MenuItem>
-            <MenuItem as={RouterLink} to="/contact">Contact</MenuItem>
           </MenuList>
         </Menu>
       </Flex>

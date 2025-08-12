@@ -1,11 +1,35 @@
 import SA1 from '../images/travelImages/South Africa/elephant.jpg'
 import SA2 from '../images/travelImages/South Africa/beach.jpg'
-import SA3 from '../images/travelImages/South Africa/Mountain.jpg'
-import SA4 from '../images/travelImages/South Africa/MountainGroup.jpg'
-import SA5 from '../images/travelImages/South Africa/safari.jpg'
+import SA3 from '../images/travelImages/South Africa/mountain.jpg'
+import SA4 from '../images/travelImages/South Africa/mountainGroup.jpg'
+import SA5 from '../images/travelImages/South Africa/zebra.jpg'
 import SA6 from '../images/travelImages/South Africa/ATV.jpg'
-import SA7 from '../images/travelImages/South Africa/Street.jpg'
-import SA8 from '../images/travelImages/South Africa/MountainGroup.jpg'
+import SA7 from '../images/travelImages/South Africa/safari.jpg'
+import SA8 from '../images/travelImages/South Africa/street.jpg'
+
+//india pictures
+import Ind1 from "../images/travelImages/India/cow2.jpg"
+import ind2 from "../images/travelImages/India/harmandirSahib.jpg"
+import ind3 from "../images/travelImages/India/block.jpg"
+import ind4 from "../images/travelImages/India/juice.jpg"
+import ind5 from "../images/travelImages/India/redFort.jpg"
+import ind6 from "../images/travelImages/India/market.jpg"
+import ind7 from "../images/travelImages/India/fire.jpg"
+import ind8 from "../images/travelImages/India/plant.jpg"
+
+
+//Puerto Rico
+
+
+//Portugal 
+import port1 from "../images/travelImages/Portugal/portMe.jpg"
+import port2 from "../images/travelImages/Portugal/cows.jpg"
+import port3 from "../images/travelImages/Portugal/town.JPG"
+import port4 from "../images/travelImages/Portugal/water.jpg"
+import port5 from "../images/travelImages/Portugal/view2.jpg"
+import port6 from "../images/travelImages/Portugal/duck.JPG"
+import port7 from "../images/travelImages/Portugal/rain.JPG"
+
 
 
 
@@ -18,15 +42,14 @@ const travels = [
     },
     {
         id:2,
+        name: "Punjab, India",
+        description: "I visited India twice—once in winter and again in summer—and got to really dive into my culture and religion. It was a great way to reconnect with my roots and appreciate the simple, meaningful things in life. I toured the Golden Temple and other major gurudwaras around Punjab, experienced farm life, and enjoyed amazing food. (My fav was my baby cow, Coco) ",
+        images: [Ind1, ind2, ind3, ind4, ind5,ind6, ind7, ind8]
+    },{
+        id:3,
         name: "Sao Miguel, Portugal",
         description: "I visited São Miguel in Portugal, this beautiful green island full of amazing nature—hot springs, volcanic lakes, tea plantations, and chill hiking spots. The fresh local food is amazing, and the peaceful vibe makes it a perfect place to slow down and enjoy simple beauty. Can you tell I’m obsessed with cows? They’re everywhere, just grazing in the fields and adding to the charm. It was truly an unforgettable experience.",
-        images: []
-    },
-    {
-        id:3,
-        name: "Punjab, India",
-        description: "",
-        images: []
+        images: [port1, port2, port3, port4, port5, port6, port7]
     },{
         id:4,
         name: "los Angeles, California",
